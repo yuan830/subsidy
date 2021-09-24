@@ -32,7 +32,7 @@ class App extends Component {
     this.unsubscribe();
   }
   render() {
-    if (this.state.loading) return "Loading Drizzle...";
+    //if (this.state.loading) return "Loading Drizzle...";
     return (
       <HashRouter>
         <div className="App">
