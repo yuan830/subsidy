@@ -45,15 +45,15 @@ class operate extends React.Component {
 
 
   go = () => {
-    this.setValue(this.state.para1,this.state.para2,this.state.para3,this.state.para4)
+    this.setValue(this.state.para1,this.state.para2,this.state.para3,this.state.para4,this.state.para5,this.state.para6,this.state.para7,this.state.para7)
   };
 
-  setValue = (value1,value2,value3,value4) => {
+  setValue = (value1,value2,value3,value4,value5,value6,value7,value8) => {
     const { drizzle, drizzleState } = this.props;
     const contract = drizzle.contracts.subsidy;
 
     // let drizzle know we want to call the `set` method with `value`
-    const stackId = contract.methods["operate"].cacheSend(value1, value2, value3, value4, {
+    const stackId = contract.methods["operate"].cacheSend(value1, value2, value3, value4, value5, value6, value7, value8, {
       from: drizzleState.accounts[0]
     });
 
