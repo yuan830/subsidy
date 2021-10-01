@@ -1,6 +1,6 @@
 import React from "react";
 
-class time extends React.Component {
+class data extends React.Component {
   state = { stackId: null , para1: null , para2: null, para3: null, para4: null};
 
   handleKeyDown1 = e1 => {
@@ -33,7 +33,7 @@ class time extends React.Component {
     const contract = drizzle.contracts.subsidy;
 
     // let drizzle know we want to call the `set` method with `value`
-    const stackId = contract.methods["time"].cacheSend(value1, value2, value3, value4, {
+    const stackId = contract.methods["data"].cacheSend(value1, value2, value3, value4, {
       from: drizzleState.accounts[0]
     });
 
@@ -57,36 +57,22 @@ class time extends React.Component {
 
   render() {
     return (
-      <div class= "time">
-          <aa>搭乘資料輸入</aa>
-        <div>
-          <w1>上車年份: </w1>
-          <input type="text" onKeyUp={this.handleKeyDown1} />          
-        </div>
-
-        <div>
-          <w1>上車月份: </w1>
-          <input type="text" onKeyUp={this.handleKeyDown2} />          
-        </div>
-
-        <div>
-          <w1>上車日期: </w1>
-          <input type="text" onKeyUp={this.handleKeyDown3} />          
-        </div>
-
-        <div>
-          <w1>上車時間: </w1>
-          <input type="text" onKeyUp={this.handleKeyDown4} />          
-        </div>
-
-        <div>
-          <input id="apply" type="button" value="紀錄" onClick={this.go}/>          
-        </div>
+      <div>
+        <aa>雜湊值輸入</aa>
+        <p>年度：</p>  
+        <p><input type="text" onKeyUp={this.handleKeyDown1} /></p>
+        <p>期數：</p>  
+        <p><input type="text" onKeyUp={this.handleKeyDown2} /></p>
+        <p>業者：</p>  
+        <p><input type="text" onKeyUp={this.handleKeyDown3} /></p>
+        <p>雜湊值(0x...)：</p>  
+        <p><input type="text" onKeyUp={this.handleKeyDown4} /></p>
+        <p className="btn"><input id="apply" type="button" value="紀錄" onClick={this.go}/></p>    
         <div>{this.getTxStatus()}</div>
       </div>
     );
   }
 }
 
-export default time;
+export default data;
 

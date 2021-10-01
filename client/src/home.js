@@ -1,6 +1,5 @@
 import React from "react";
 import Iframe from 'react-iframe'
-import './home.css';
 class home extends React.Component {
   render() {
     return (

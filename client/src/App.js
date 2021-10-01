@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import logo from './logo.svg';
 import Home from './home'
 import Operate from './operate'
-import Passenger from './passenger'
-import Time from './time'
-import Driver from './driver'
 import SubsidyMotc from './subsidyMotc'
 import SubsidyPt from './subsidyPt'
+import Find_hash from './find_hash'
+import Data from './data'
+import Money from './money'
 import {
   Route,
   NavLink,
@@ -32,7 +31,7 @@ class App extends Component {
     this.unsubscribe();
   }
   render() {
-    //if (this.state.loading) return "Loading Drizzle...";
+    if (this.state.loading) return "Loading Drizzle...";
     return (
       <HashRouter>
         <div className="App">
@@ -43,14 +42,16 @@ class App extends Component {
           <ul className="header">
               <li><NavLink to="/Home">Home</NavLink></li>
               <li><NavLink to="/Operate">Operate</NavLink></li>
-              <li><NavLink to="/Passenger">Passenger</NavLink></li>
-              <li><NavLink to="/Time">Time</NavLink></li>
-              <li><NavLink to="/Driver">Driver</NavLink></li>
+              <li><NavLink to="/Money">Money</NavLink></li>
+              <li><NavLink to="/Data">Data</NavLink></li>
               <li><NavLink to="/SubsidyMotc">SubsidyMotc</NavLink></li>
               <li><NavLink to="/SubsidyPt">SubsidyPt</NavLink></li>
+              <li><NavLink to="/Find_hash">Find_hash</NavLink></li>
           </ul>
           <div className="content">
-            <Route path="/home">
+            <Route path="/">
+            </Route>
+            <Route path="/Home">
               <Home></Home>
             </Route>
             <Route path="/Operate" >
@@ -59,21 +60,14 @@ class App extends Component {
               drizzleState={this.state.drizzleState}
               />
             </Route>
-            <Route path="/Passenger">
-              <Passenger
+            <Route path="/Money">
+              <Money
               drizzle={this.props.drizzle}
               drizzleState={this.state.drizzleState}
               />
             </Route>
-            <Route path="/Time">
-              <Time
-              drizzle={this.props.drizzle}
-              drizzleState={this.state.drizzleState}
-              />
-            </Route>
-
-            <Route path="/Driver">
-              <Driver
+            <Route path="/Data">
+              <Data
               drizzle={this.props.drizzle}
               drizzleState={this.state.drizzleState}
               />
@@ -86,6 +80,12 @@ class App extends Component {
             </Route>
             <Route path="/SubsidyPt">
               <SubsidyPt
+              drizzle={this.props.drizzle}
+              drizzleState={this.state.drizzleState}
+              />
+            </Route>
+            <Route path="/Find_hash">
+              <Find_hash
               drizzle={this.props.drizzle}
               drizzleState={this.state.drizzleState}
               />

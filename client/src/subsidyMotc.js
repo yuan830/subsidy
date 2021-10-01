@@ -16,7 +16,6 @@ class subsidyMotc extends React.Component {
   async go1(){
     const { drizzle } = this.props;
     const contract = drizzle.contracts.subsidy;
-    const aaa = this.state.para;
     // let drizzle know we want to watch the `myString` method
     //var i=6;
     const hashedText1 = await this.text1;
@@ -43,23 +42,20 @@ class subsidyMotc extends React.Component {
     //console.log(see);
     // if it exists, then we display its value
     return(
-
-      <div class= "subsidyMotc">
+      <div>
         <aa>虧損補貼款統計</aa>
-        <div>
-          <w1>年份: </w1>
-          <input type="text" onChange={(evt1) => this.text1 = evt1.target.value} placeholder="請輸入單位名稱" autosize />
-          <w1>期數: </w1>
-          <input type="text" onChange={(evt2) => this.text2 = evt2.target.value} placeholder="請輸入單位名稱" autosize />
-          <w1>路線: </w1>
-          <input type="text" onChange={(evt3) => this.text3 = evt3.target.value} placeholder="請輸入單位名稱" autosize />
-          <w1>營運單位: </w1>
-          <input type="text" onChange={(evt4) => this.text4 = evt4.target.value} placeholder="請輸入單位名稱" autosize />
-        </div>
-        <div>
-          <input id="apply" type="button" value="查詢補貼" onClick={() => this.go1()}/> 
-        </div>
-        <p>該路線補貼金額 : {see &&see.value} </p>
+        <p>年度：</p>  
+        <p><input type="text" onChange={(evt1) => this.text1 = evt1.target.value} placeholder="請輸入單位名稱" autosize  /></p>
+        <p>期數：</p>  
+        <p><input type="text" onChange={(evt2) => this.text2 = evt2.target.value} placeholder="請輸入單位名稱" autosize /></p>
+        <p>路線：</p>  
+        <p><input type="text" onChange={(evt3) => this.text3 = evt3.target.value} placeholder="請輸入單位名稱" autosize /></p>
+        <p>營運單位：</p>  
+        <p><input type="text" onChange={(evt4) => this.text4 = evt4.target.value} placeholder="請輸入單位名稱" autosize /></p>
+        <p className="btn"><input id="apply" type="button" value="查詢補貼" onClick={() => this.go1()}/> </p>    
+        <p>該路線總補貼金額 : {see &&see.value[0]} </p>
+        <p>該路線總行駛里程 : {see &&see.value[1]} </p>
+        <p>該路線總搭乘人數 : {see &&see.value[2]} </p>
       </div>
     );
   }

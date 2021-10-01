@@ -1,7 +1,8 @@
 import React from "react";
 
-class operate extends React.Component {
-  state = { stackId: null , para1: null , para2: null, para3: null, para4: null};
+
+class money extends React.Component {
+  state = { stackId: null , para1: null , para2: null, para3: null, para4: null, para5: null , para6: null, para7: null, para8: null};
 
   handleKeyDown1 = e1 => {
     // if the enter key is pressed, set the value with the string
@@ -45,15 +46,15 @@ class operate extends React.Component {
 
 
   go = () => {
-    this.setValue(this.state.para1,this.state.para2,this.state.para3,this.state.para4)
+    this.setValue(this.state.para1,this.state.para2,this.state.para3,this.state.para4,this.state.para5,this.state.para6,this.state.para7,this.state.para8)
   };
 
-  setValue = (value1,value2,value3,value4) => {
+  setValue = (value1,value2,value3,value4,value5,value6,value7,value8) => {
     const { drizzle, drizzleState } = this.props;
     const contract = drizzle.contracts.subsidy;
 
     // let drizzle know we want to call the `set` method with `value`
-    const stackId = contract.methods["operate"].cacheSend(value1, value2, value3, value4, {
+    const stackId = contract.methods["money"].cacheSend(value1, value2*1000, value3, value4, value5, value6, value7, value8,{
       from: drizzleState.accounts[0]
     });
 
@@ -77,30 +78,30 @@ class operate extends React.Component {
 
   render() {
     return (
-      <div>
-        <aa>路線資料輸入</aa>
-        <p>路線編號：</p>  
+      <div class= "money">
+        <aa>補貼資料輸入</aa>
+        <p>路線營收：</p>  
         <p><input type="text" onKeyUp={this.handleKeyDown1} /></p>
-        <p>營運單位：</p>  
+        <p>行駛里程：</p>  
         <p><input type="text" onKeyUp={this.handleKeyDown2} /></p>
-        <p>搭乘年份：</p>  
+        <p>補貼年份：</p>  
         <p><input type="text" onKeyUp={this.handleKeyDown3} /></p>
-        <p>搭乘月份：</p>  
+        <p>期數：</p>  
         <p><input type="text" onKeyUp={this.handleKeyDown4} /></p>
-        <p>搭乘日期：</p>  
+        <p>愛心營收：</p>  
         <p><input type="text" onKeyUp={this.handleKeyDown5} /></p>
-        <p>上車時間：</p>  
+        <p>愛心實際收入：</p>  
         <p><input type="text" onKeyUp={this.handleKeyDown6} /></p>
-        <p>搭乘人數：</p>  
+        <p>敬老營收：</p>  
         <p><input type="text" onKeyUp={this.handleKeyDown7} /></p>
-        <p>車號：</p>  
+        <p>敬老實際收入：</p>  
         <p><input type="text" onKeyUp={this.handleKeyDown8} /></p>
-        <p className="btn"><input id="apply" type="button" value="紀錄" onClick={this.go}/></p>    
+        <p className="btn"><input id="apply" type="button" value="紀錄" onClick={this.go}/></p>
         <div>{this.getTxStatus()}</div>
       </div>
     );
   }
 }
 
-export default operate;
+export default money;
 

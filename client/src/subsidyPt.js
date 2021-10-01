@@ -16,7 +16,6 @@ class subsidyPt extends React.Component {
   async go1(){
     const { drizzle } = this.props;
     const contract = drizzle.contracts.subsidy;
-    const aaa = this.state.para;
     // let drizzle know we want to watch the `myString` method
     //var i=6;
     const hashedText1 = await this.text1;
@@ -43,27 +42,22 @@ class subsidyPt extends React.Component {
     //console.log(see);
     // if it exists, then we display its value
     return(
-
-      <div class= "subsidyPt">
-        <aa>愛心、敬老補貼款剩餘查詢</aa>
-        <div>
-          <w1>年份: </w1>
-          <input type="text" onChange={(evt1) => this.text1 = evt1.target.value} placeholder="請輸入單位名稱" autosize />
-          <w1>月份: </w1>
-          <input type="text" onChange={(evt2) => this.text2 = evt2.target.value} placeholder="請輸入單位名稱" autosize />
-          <w1>路線: </w1>
-          <input type="text" onChange={(evt3) => this.text3 = evt3.target.value} placeholder="請輸入單位名稱" autosize />
-          <w1>營運單位: </w1>
-          <input type="text" onChange={(evt4) => this.text4 = evt4.target.value} placeholder="請輸入單位名稱" autosize />
-        </div>
-        <div>
-          <input id="apply" type="button" value="查詢補貼" onClick={() => this.go1()}/> 
-        </div>
-        <p>路線別愛心款項 : {see &&see.value[0]} </p>
-        <p>公司別愛心款項 : {see &&see.value[1]} </p>
-        <p>路線別敬老款項 : {see &&see.value[2]} </p>
-        <p>公司別敬老款項 : {see &&see.value[3]} </p>
-      </div>
+      <div>
+      <aa>愛心、敬老補貼款剩餘查詢</aa>
+      <p>年度：</p>  
+      <p><input type="text" onChange={(evt1) => this.text1 = evt1.target.value} placeholder="請輸入單位名稱" autosize  /></p>
+      <p>月份：</p>  
+      <p><input type="text" onChange={(evt2) => this.text2 = evt2.target.value} placeholder="月份：" autosize /></p>
+      <p>路線：</p>  
+      <p><input type="text" onChange={(evt3) => this.text3 = evt3.target.value} placeholder="路線：" autosize /></p>
+      <p>營運單位：</p>  
+      <p><input type="text" onChange={(evt4) => this.text4 = evt4.target.value} placeholder="營運單位：" autosize /></p>
+      <p className="btn"><input id="apply" type="button" value="查詢補貼" onClick={() => this.go1()}/> </p>    
+      <p>路線別愛心款項 : {see &&see.value[0]} </p>
+      <p>公司別愛心款項 : {see &&see.value[1]} </p>
+      <p>路線別敬老款項 : {see &&see.value[2]} </p>
+      <p>公司別敬老款項 : {see &&see.value[3]} </p>
+     </div>
     );
   }
 }
