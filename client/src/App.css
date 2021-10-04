@@ -75,3 +75,6 @@ input{
   justify-content: center; 
   align-items: center; 
 }
+select{
+  width: 100%;
+}

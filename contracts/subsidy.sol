@@ -122,8 +122,6 @@ contract subsidy{
         uint32 mileage=0; //路線里程(已被*1000)
         uint16 people=0;   //搭乘人數
         //uint32 count=0;
-        if(count_operate!=count_money)
-            return(0,0,0);        
         for(uint16 i=0; i<count_operate; i++){  //算(路線)總里程
             if(operator==map_operate_in[i]._operator){ //若營運單位相同
                 if(year==map_money_in[i]._year_of_season){ //若年份相同
@@ -149,8 +147,6 @@ contract subsidy{
         uint32 disable_total_subsidy;   //公司愛心補貼總和
         uint32 elder_subsidy; //路線敬老補貼總和
         uint32 elder_total_subsidy;   //公司敬老補貼總和
-        if(count_operate!=count_money)
-            return(0,0,0,0);    
         for(uint16 j=0; j<count_operate; j++){//遍歷所有票證資料
             if(operator==map_operate_in[j]._operator){ //若營運單位相同
                 if(year==map_operate_in[j]._year){ //若年份相同

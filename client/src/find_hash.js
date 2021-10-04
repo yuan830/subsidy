@@ -4,7 +4,9 @@ import React from "react";
 
 class find_hash extends React.Component {
   state = { dataKey: null, para:null};
-  
+  year = () =>{
+    return new Date().getFullYear();
+  }
   /*handleKeyDown = e => {
   // if the enter key is pressed, set the value with the string
     this.setState({para:e.target.value});
@@ -44,16 +46,36 @@ class find_hash extends React.Component {
     return(
       <div>
         <aa>資料雜湊值顯示</aa>
-        <p>年度：</p>  
-        <p><input type="text" onChange={(evt1) => this.text1 = evt1.target.value} placeholder="請輸入年分" autosize  /></p>
-        <p>期數：</p>  
-        <p><input type="text" onChange={(evt2) => this.text2 = evt2.target.value} placeholder="請輸入期數" autosize   /></p>
-        <p>業者：</p>  
-        <p><input type="text" onChange={(evt3) => this.text3 = evt3.target.value} placeholder="請輸入單位名稱" autosize /></p>
+        <p>補貼年度：</p>  
+        <p>
+          <select onChange={(evt1) => this.text1 = evt1.target.value}>
+            <option value="0" selected disabled hidden>請選擇年度</option>
+            <option value={this.year()} >{this.year()}年</option>
+            <option value={this.year()-1}>{this.year()-1}年</option>
+            <option value={this.year()-2}>{this.year()-2}年</option>
+          </select> 
+        </p>
+        <p>補貼期數：</p>  
+        <p>
+          <select onChange={(evt2) => this.text2 = evt2.target.value}>
+            <option value="0" selected disabled hidden>請選擇期數</option>
+            <option value="1">第一期(5~10月)</option>
+            <option value="2">第二期(11~隔年4月)</option>
+          </select>  
+        </p>
+        <p>營運單位：</p>  
+        <p>
+          <select onChange={(evt3) => this.text3 = evt3.target.value}>
+            <option value="0" selected disabled hidden>請選擇營運單位</option>
+            <option value="1">一粒麥子基金會</option>
+            <option value="2">屏東客運</option>
+            <option value="3">高雄客運</option>
+          </select> 
+        </p>
         <p>雜湊值(0x...)：</p>  
         <p><input type="text" onChange={(evt4) => this.text4 = evt4.target.value} placeholder="請輸入雜湊值" autosize /></p>
         <p className="btn"><input id="apply" type="button" value="查詢雜湊值" onClick={() => this.go1()}/> </p>    
-        <aa>是否一致 : {see &&see.value} </aa>
+        <p>是否一致 : {see &&see.value} </p>
       </div>
 
       // <div class= "find_hash">

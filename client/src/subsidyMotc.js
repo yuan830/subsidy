@@ -4,12 +4,12 @@ import React from "react";
 
 class subsidyMotc extends React.Component {
   state = { dataKey: null, para:null};
-  
+  year = () =>{
+    return new Date().getFullYear();
+  }
   /*handleKeyDown = e => {
   // if the enter key is pressed, set the value with the string
     this.setState({para:e.target.value});
-    console.log("state set");
-    this.go1();
     
   };     */ 
 
@@ -44,14 +44,41 @@ class subsidyMotc extends React.Component {
     return(
       <div>
         <aa>虧損補貼款統計</aa>
-        <p>年度：</p>  
-        <p><input type="text" onChange={(evt1) => this.text1 = evt1.target.value} placeholder="請輸入單位名稱" autosize  /></p>
-        <p>期數：</p>  
-        <p><input type="text" onChange={(evt2) => this.text2 = evt2.target.value} placeholder="請輸入單位名稱" autosize /></p>
+        <p>補貼年度：</p>  
+        <p>
+          <select onChange={(evt1) => this.text1 = evt1.target.value}>
+            <option value="0" selected disabled hidden>請選擇年度</option>
+            <option value={this.year()}>{this.year()}年</option>
+            <option value={this.year()-1}>{this.year()-1}年</option>
+            <option value={this.year()-2}>{this.year()-2}年</option>
+          </select> 
+        </p>
+        <p>補貼期數：</p>  
+        <p>
+          <select onChange={(evt2) => this.text2 = evt2.target.value}>
+            <option value="0" selected disabled hidden>請選擇期數</option>
+            <option value="1">第一期(5~10月)</option>
+            <option value="2">第二期(11~隔年4月)</option>
+          </select> 
+        </p>
         <p>路線：</p>  
-        <p><input type="text" onChange={(evt3) => this.text3 = evt3.target.value} placeholder="請輸入單位名稱" autosize /></p>
+        <p>
+          <select onChange={(evt3) => this.text3 = evt3.target.value}>
+            <option value="0" selected disabled hidden>請選擇路線標號</option>
+            <option value="1">龍脊</option>
+            <option value="2">龍身</option>
+            <option value="3">龍爪</option>
+          </select> 
+        </p>
         <p>營運單位：</p>  
-        <p><input type="text" onChange={(evt4) => this.text4 = evt4.target.value} placeholder="請輸入單位名稱" autosize /></p>
+        <p>
+          <select onChange={(evt4) => this.text4 = evt4.target.value}>
+            <option value="0" selected disabled hidden>請選擇營運單位</option>
+            <option value="1">一粒麥子基金會</option>
+            <option value="2">屏東客運</option>
+            <option value="3">高雄客運</option>
+          </select> 
+        </p>
         <p className="btn"><input id="apply" type="button" value="查詢補貼" onClick={() => this.go1()}/> </p>    
         <p>該路線總補貼金額 : {see &&see.value[0]} </p>
         <p>該路線總行駛里程 : {see &&see.value[1]} </p>

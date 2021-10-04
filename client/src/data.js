@@ -2,6 +2,9 @@ import React from "react";
 
 class data extends React.Component {
   state = { stackId: null , para1: null , para2: null, para3: null, para4: null};
+  year = () =>{
+    return new Date().getFullYear();
+  }
 
   handleKeyDown1 = e1 => {
     // if the enter key is pressed, set the value with the string
@@ -59,12 +62,32 @@ class data extends React.Component {
     return (
       <div>
         <aa>雜湊值輸入</aa>
-        <p>年度：</p>  
-        <p><input type="text" onKeyUp={this.handleKeyDown1} /></p>
-        <p>期數：</p>  
-        <p><input type="text" onKeyUp={this.handleKeyDown2} /></p>
+        <p>補貼年度：</p>  
+        <p>
+          <select onChange={(evt1) => this.text1 = evt1.target.value}>
+            <option value="0" selected disabled hidden>請選擇年度</option>
+            <option value={this.year()} >{this.year()}年</option>
+            <option value={this.year()-1}>{this.year()-1}年</option>
+            <option value={this.year()-2}>{this.year()-2}年</option>
+          </select> 
+        </p>
+        <p>補貼期數：</p>  
+        <p>
+          <select onChange={(evt2) => this.text2 = evt2.target.value}>
+            <option value="0" selected disabled hidden>請選擇期數</option>
+            <option value="1">第一期(5~10月)</option>
+            <option value="2">第二期(11~隔年4月)</option>
+          </select>  
+        </p>
         <p>業者：</p>  
-        <p><input type="text" onKeyUp={this.handleKeyDown3} /></p>
+        <p>
+          <select onChange={(evt3) => this.text3 = evt3.target.value}>
+            <option value="0" selected disabled hidden>請選擇營運單位</option>
+            <option value="1">一粒麥子基金會</option>
+            <option value="2">屏東客運</option>
+            <option value="3">高雄客運</option>
+          </select> 
+        </p>
         <p>雜湊值(0x...)：</p>  
         <p><input type="text" onKeyUp={this.handleKeyDown4} /></p>
         <p className="btn"><input id="apply" type="button" value="紀錄" onClick={this.go}/></p>    

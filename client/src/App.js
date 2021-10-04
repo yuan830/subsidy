@@ -5,7 +5,6 @@ import SubsidyMotc from './subsidyMotc'
 import SubsidyPt from './subsidyPt'
 import Find_hash from './find_hash'
 import Data from './data'
-import Money from './money'
 import {
   Route,
   NavLink,
@@ -42,7 +41,6 @@ class App extends Component {
           <ul className="header">
               <li><NavLink to="/Home">Home</NavLink></li>
               <li><NavLink to="/Operate">Operate</NavLink></li>
-              <li><NavLink to="/Money">Money</NavLink></li>
               <li><NavLink to="/Data">Data</NavLink></li>
               <li><NavLink to="/SubsidyMotc">SubsidyMotc</NavLink></li>
               <li><NavLink to="/SubsidyPt">SubsidyPt</NavLink></li>
@@ -56,12 +54,6 @@ class App extends Component {
             </Route>
             <Route path="/Operate" >
               <Operate
-              drizzle={this.props.drizzle}
-              drizzleState={this.state.drizzleState}
-              />
-            </Route>
-            <Route path="/Money">
-              <Money
               drizzle={this.props.drizzle}
               drizzleState={this.state.drizzleState}
               />
