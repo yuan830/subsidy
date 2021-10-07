@@ -51,7 +51,7 @@ contract subsidy{
         uint8 _day;   //上車日期
         uint16 _time; //上車時間
         uint16 _people; //搭乘人數        
-        string _plate; //車號        
+        uint8 _plate; //車號        
     }
 
     struct money_in{
@@ -80,7 +80,7 @@ contract subsidy{
     uint16 count_money=0; //目前跑到多少片
     uint16 count_data=0; //目前跑到多少片
 
-    function operate(uint8 _number, uint8 _operator, uint16 _year, uint8 _month, uint8 _day, uint16 _time, uint16 _people, string memory _plate) public {  //營運資料輸入
+    function operate(uint8 _number, uint8 _operator, uint16 _year, uint8 _month, uint8 _day, uint16 _time, uint16 _people, uint8 _plate) public {  //營運資料輸入
         operate_in storage c = map_operate_in[count_operate];  //進去哪一個slide
         c._number=_number;
         c._operator=_operator;

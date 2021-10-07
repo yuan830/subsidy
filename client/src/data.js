@@ -24,6 +24,7 @@ class data extends React.Component {
   handleKeyDown4 = e4 => {
     // if the enter key is pressed, set the value with the string
     this.setState({para4:e4.target.value});
+    console.log(e4.target.value)
   };
 
 
@@ -64,7 +65,7 @@ class data extends React.Component {
         <aa>雜湊值輸入</aa>
         <p>補貼年度：</p>  
         <p>
-          <select onChange={(evt1) => this.text1 = evt1.target.value}>
+          <select onChange={this.handleKeyDown1}>
             <option value="0" selected disabled hidden>請選擇年度</option>
             <option value={this.year()} >{this.year()}年</option>
             <option value={this.year()-1}>{this.year()-1}年</option>
@@ -73,7 +74,7 @@ class data extends React.Component {
         </p>
         <p>補貼期數：</p>  
         <p>
-          <select onChange={(evt2) => this.text2 = evt2.target.value}>
+          <select onChange={this.handleKeyDown2}>
             <option value="0" selected disabled hidden>請選擇期數</option>
             <option value="1">第一期(5~10月)</option>
             <option value="2">第二期(11~隔年4月)</option>
@@ -81,7 +82,7 @@ class data extends React.Component {
         </p>
         <p>業者：</p>  
         <p>
-          <select onChange={(evt3) => this.text3 = evt3.target.value}>
+          <select onChange={this.handleKeyDown3}>
             <option value="0" selected disabled hidden>請選擇營運單位</option>
             <option value="1">一粒麥子基金會</option>
             <option value="2">屏東客運</option>
