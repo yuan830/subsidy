@@ -39,16 +39,14 @@ class App extends Component {
           </h1>
           
           <ul className="header">
-              <li><NavLink to="/Home">Home</NavLink></li>
-              <li><NavLink to="/Operate">Operate</NavLink></li>
-              <li><NavLink to="/Data">Data</NavLink></li>
-              <li><NavLink to="/SubsidyMotc">SubsidyMotc</NavLink></li>
-              <li><NavLink to="/SubsidyPt">SubsidyPt</NavLink></li>
-              <li><NavLink to="/Find_hash">Find_hash</NavLink></li>
+              <li><NavLink to="/Home">主頁</NavLink></li>
+              <li><NavLink to="/Operate">營運業者資料輸入</NavLink></li>
+              <li><NavLink to="/Data">檔案雜湊值輸入</NavLink></li>
+              <li><NavLink to="/SubsidyMotc">虧損補貼款統計查詢</NavLink></li>
+              <li><NavLink to="/SubsidyPt">愛心與敬老補貼款查詢</NavLink></li>
+              <li><NavLink to="/Find_hash">檔案雜湊值判讀</NavLink></li>
           </ul>
           <div className="content">
-            <Route path="/">
-            </Route>
             <Route path="/Home">
               <Home></Home>
             </Route>

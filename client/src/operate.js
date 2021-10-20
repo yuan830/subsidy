@@ -136,7 +136,7 @@ class operate extends React.Component {
 
         <p>營運單位：</p>  
         <p>
-          <select onLoad={this.handleKeyDown2} onChange={this.handleKeyDown2} >
+          <select onChange={this.handleKeyDown2} >
             {/* <option value="0" selected disabled hidden>請選擇營運單位</option> */}
             <option value="1"selected>一粒麥子基金會</option>
             <option value="2">屏東客運</option>
