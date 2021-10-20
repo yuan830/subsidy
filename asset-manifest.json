@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/subsidy/static/css/main.9690c06f.chunk.css",
+    "main.css": "/subsidy/static/css/main.8235863c.chunk.css",
     "main.js": "/subsidy/static/js/main.192c421d.chunk.js",
     "main.js.map": "/subsidy/static/js/main.192c421d.chunk.js.map",
     "runtime-main.js": "/subsidy/static/js/runtime-main.07bef34c.js",
@@ -8,13 +8,13 @@
     "static/js/2.c937caf6.chunk.js": "/subsidy/static/js/2.c937caf6.chunk.js",
     "static/js/2.c937caf6.chunk.js.map": "/subsidy/static/js/2.c937caf6.chunk.js.map",
     "index.html": "/subsidy/index.html",
-    "static/css/main.9690c06f.chunk.css.map": "/subsidy/static/css/main.9690c06f.chunk.css.map",
+    "static/css/main.8235863c.chunk.css.map": "/subsidy/static/css/main.8235863c.chunk.css.map",
     "static/js/2.c937caf6.chunk.js.LICENSE.txt": "/subsidy/static/js/2.c937caf6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.07bef34c.js",
     "static/js/2.c937caf6.chunk.js",
-    "static/css/main.9690c06f.chunk.css",
+    "static/css/main.8235863c.chunk.css",
     "static/js/main.192c421d.chunk.js"
   ]
 }
