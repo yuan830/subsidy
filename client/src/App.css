@@ -1,9 +1,17 @@
 .App {
   text-align: center;
   display: "block";
+  background-color: #97CBFF;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: 100% 100%;
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -12,7 +20,7 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */
 
 .App-header {
   background-color: #282c34;
@@ -32,17 +40,30 @@
 ul.header {
   background-color: #111;
   padding: 0;
+  margin: 0;
+  
+}
+.abc{
+  margin-left: auto;
+  margin-right: auto;
 }
 ul.header li {
   color: #FFF;
   font-weight: bold;
   text-decoration: none;
   padding: 20px;
+  height: 62px;
+  width: 240px;
   display: inline-block;
+
 }
 ul.header li a{
   color: #FFF;
   padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center
+  
 }
 .active {
   background-color: #0099FF;

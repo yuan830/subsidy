@@ -9,14 +9,18 @@ class home extends React.Component {
             </div>
             <br/>
             <div className="home">
-                <Iframe 
-                width="560" 
-                height="315" 
-                src="https://www.youtube.com/embed/T1W-6jli_dc" 
-                title="YouTube video player" 
-                frameborder="0" 
-                data-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen></Iframe>
+            <iframe width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/D7TyOdOVlP4" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; 
+            autoplay; 
+            clipboard-write; 
+            encrypted-media; 
+            gyroscope; 
+            picture-in-picture" allowfullscreen>
+            </iframe>
             </div>
         </div>
     );
@@ -24,4 +28,5 @@ class home extends React.Component {
 }
 
 export default home;
+
 

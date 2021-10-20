@@ -32,23 +32,24 @@ class App extends Component {
   render() {
     if (this.state.loading) return "Loading Drizzle...";
     return (
-      <HashRouter>
-        <div className="App">
+      <div className="App">
+        <HashRouter>  
           <h1>
             幸福巴士2.0區塊鏈補貼系統
           </h1>
-          
           <ul className="header">
-              <li><NavLink to="/Home">主頁</NavLink></li>
-              <li><NavLink to="/Operate">營運業者資料輸入</NavLink></li>
-              <li><NavLink to="/Data">檔案雜湊值輸入</NavLink></li>
-              <li><NavLink to="/SubsidyMotc">虧損補貼款統計查詢</NavLink></li>
-              <li><NavLink to="/SubsidyPt">愛心與敬老補貼款查詢</NavLink></li>
-              <li><NavLink to="/Find_hash">檔案雜湊值判讀</NavLink></li>
-          </ul>
+            <li><NavLink to="/Home">主頁</NavLink></li>
+            <li><NavLink to="/Operate">營運業者資料輸入</NavLink></li>
+            <li><NavLink to="/Data">檔案雜湊值輸入</NavLink></li>
+            </ul>
+          <ul className="header">
+            <li><NavLink to="/SubsidyMotc">虧損補貼款統計查詢</NavLink></li>
+            <li><NavLink to="/SubsidyPt">愛心與敬老補貼款查詢</NavLink></li>
+            <li><NavLink to="/Find_hash">檔案雜湊值判讀</NavLink></li>
+            </ul>
           <div className="content">
             <Route path="/Home">
-              <Home></Home>
+              <Home/>
             </Route>
             <Route path="/Operate" >
               <Operate
@@ -81,8 +82,8 @@ class App extends Component {
               />
             </Route>
           </div>
-        </div>
-      </HashRouter>
+          </HashRouter>
+      </div>
 
     );
   }
